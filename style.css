@@ -729,4 +729,8 @@ footer {
     .galerie {
         columns: 2;
     }
+
+    .about-right{
+        display: none;
+    }
 }
