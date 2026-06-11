@@ -734,3 +734,129 @@ footer {
         display: none;
     }
 }
+.services {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 60px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 40px;
+}
+
+.service-item img {
+    width: 200px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.service-text h3 {
+    font-size: 22px;
+    letter-spacing: 3px;
+    color: blue;
+    margin: 0 0 10px 0;
+}
+
+.service-text p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+}
+
+.retour {
+    position: fixed;
+    right: 10px;
+    bottom: 25px;
+    background-color: black;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+}
+
+.retour a {
+
+ text-decoration: none;
+}
+
+
+.liste-services {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 40px 60px;
+    background: #020024;
+    background: linear-gradient(135deg, 
+    #000000 0%, 
+    #000000 55%, 
+    #0a0a7a 80%, 
+    #0033ff 100%
+);
+    border-radius: 20px;
+   
+}
+
+.liste-services h1 {
+    font-size: 38px;
+    color: white;
+    letter-spacing: 5px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.liste-services ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+   gap: 60px;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+}
+
+.liste-services ul li {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+    cursor: default;
+    transition: color 0.3s;
+    color: white;
+}
+
+.liste-services ul li:hover {
+    color: blue;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .liste-services {
+        margin: 40px 15px;
+        padding: 30px 20px;
+        border-radius: 12px;
+    }
+
+
+    .liste-services ul li {
+      
+        font-size: 12px;
+        letter-spacing: 2px;
+        padding: 15px 0;
+    }
+}
