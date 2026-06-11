@@ -677,3 +677,39 @@ footer {
     }
 }
 
+
+
+
+
+
+.galerie {
+    columns: 3;
+    column-gap: 15px;
+    padding: 40px 60px;
+}
+
+.galerie img {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    break-inside: avoid;
+    display: block;
+}
+
+.galerie img:hover {
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .galerie {
+        columns: 2;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .galerie {
+        columns: 2;
+    }
+}
