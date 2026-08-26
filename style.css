@@ -1,5 +1,3 @@
-
-
 header {
 
   color: black;
@@ -699,6 +697,80 @@ footer {
 
 
 
+/* ── PROJETS RÉCENTS — études de cas ── */
+
+.case-studies {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 60px;
+}
+
+.case-header {
+    margin-bottom: 24px;
+}
+
+.case-tag {
+    color: blue;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
+.case-header h3 {
+    font-size: 26px;
+    letter-spacing: 3px;
+    margin: 0 0 10px 0;
+}
+
+.case-header p:last-child {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+    max-width: 560px;
+}
+
+.case-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 220px);
+    gap: 10px;
+}
+
+.case-photos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.case-photos .ph-main {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+@media (max-width: 768px) {
+    .case-studies {
+        padding: 20px;
+        gap: 50px;
+    }
+
+    .case-photos {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 160px);
+    }
+
+    .case-photos .ph-main {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+}
+
 .galerie {
     columns: 3;
     column-gap: 15px;
@@ -737,18 +809,19 @@ footer {
 .services {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 0;
     padding: 60px;
-    max-width: 900px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
 .service-item {
     display: flex;
     align-items: center;
-    gap: 40px;
+    justify-content: center;
+    text-align: center;
     border-bottom: 1px solid #eee;
-    padding-bottom: 40px;
+    padding: 30px 0;
 }
 
 .service-item img {
@@ -792,7 +865,9 @@ footer {
 }
 
 
-.liste-services {
+/* ── SECTION SERVICES — grille bento ── */
+
+.services-bento {
     max-width: 900px;
     margin: 80px auto;
     padding: 40px 60px;
@@ -804,10 +879,9 @@ footer {
     #0033ff 100%
 );
     border-radius: 20px;
-   
 }
 
-.liste-services h1 {
+.services-bento h1 {
     font-size: 38px;
     color: white;
     letter-spacing: 5px;
@@ -815,49 +889,99 @@ footer {
     text-align: center;
 }
 
-.liste-services ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-   gap: 60px;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 190px 190px 130px;
+    grid-template-areas:
+        "identity identity logo"
+        "identity identity social"
+        "flyers   print       photo";
+    gap: 14px;
 }
 
-.liste-services ul li {
-    font-size: 22px;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
-    cursor: default;
-    transition: color 0.3s;
+.bento-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 18px;
+}
+
+/* cartes avec image de fond */
+.bento-card.thumb {
+    background-size: cover;
+    background-position: center;
     color: white;
 }
-
-.liste-services ul li:hover {
-    color: blue;
+.bento-card.thumb::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.05) 30%, rgba(0,0,0,0.85) 100%);
+}
+.bento-card.thumb .tag,
+.bento-card.thumb h3 {
+    position: relative;
+    z-index: 1;
 }
 
+/* cartes texte seul */
+.bento-card.plain {
+    background: #1a1a1a;
+    color: white;
+}
+.bento-card.plain.accent {
+    background: #0033ff;
+}
 
+.bento-card .tag {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 6px;
+}
 
+.bento-card h3 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.25;
+}
+
+.area-identity { grid-area: identity; }
+.area-logo     { grid-area: logo; }
+.area-social   { grid-area: social; }
+.area-flyers   { grid-area: flyers; }
+.area-print    { grid-area: print; }
+.area-photo    { grid-area: photo; }
 
 @media (max-width: 768px) {
-    .liste-services {
+    .services-bento {
         margin: 40px 15px;
         padding: 30px 20px;
         border-radius: 12px;
     }
 
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 140px);
+        grid-template-areas:
+            "identity identity"
+            "identity identity"
+            "logo social"
+            "flyers print"
+            "photo photo"
+            "photo photo";
+    }
 
-    .liste-services ul li {
-      
-        font-size: 12px;
-        letter-spacing: 2px;
-        padding: 15px 0;
+    .bento-card h3 {
+        font-size: 15px;
     }
 }
 
